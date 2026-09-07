@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>以人民为中心 · 中国共产党的根本政治立场</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --red-deep: #8B0000;
+            --red-primary: #C0392B;
+            --red-bright: #E74C3C;
+            --red-light: #FADBD8;
+            --red-pale: #FEF5F5;
+            --gold: #D4AC0D;
+            --gold-light: #F9E79F;
+            --gold-dark: #9A7D0A;
+            --ink: #1A0A0A;
+            --ink-mid: #3D1515;
+            --cream: #FDF6EC;
+            --white: #FFFFFF;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: #1A0000;
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            background: linear-gradient(165deg, #6B0000 0%, #A00000 35%, #C0392B 65%, #8B0000 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(212, 172, 13, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 172, 13, 0.06) 0%, transparent 50%);
+        }
+        .star-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            color: var(--gold);
+            font-size: 14px;
+            opacity: 0.15;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: .1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: .3;
+                transform: scale(1.2);
+            }
+        }
+        .hero-emblem {
+            font-size: 72px;
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes glow {
+            0%,
+            100% {
+                filter: drop-shadow(0 0 8px rgba(212, 172, 13, .4));
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(212, 172, 13, .8));
+            }
+        }
+        .hero-subtitle-top {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 13px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(36px, 7vw, 72px);
+            font-weight: 900;
+            color: white;
+            letter-spacing: 4px;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 16px;
+        }
+        .hero-title span {
+            color: var(--gold);
+        }
+        .hero-divider {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-desc {
+            font-size: 15px;
+            color: rgba(255, 255, 255, .8);
+            max-width: 600px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-quote {
+            margin-top: 32px;
+            padding: 20px 32px;
+            border: 1px solid rgba(212, 172, 13, .4);
+            border-left: 4px solid var(--gold);
+            background: rgba(0, 0, 0, .25);
+            border-radius: 4px;
+            max-width: 580px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-quote p {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 15px;
+            color: var(--gold-light);
+            line-height: 2;
+            letter-spacing: 1px;
+        }
+        .hero-quote cite {
+            display: block;
+            margin-top: 8px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .45);
+            letter-spacing: 2px;
+        }
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, .4);
+            font-size: 12px;
+            letter-spacing: 3px;
+            animation: bounce 2s infinite;
+            z-index: 1;
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        /* NAV */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(26, 0, 0, .97);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(212, 172, 13, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            padding: 14px 28px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, .5);
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all .25s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-btn:hover,
+        .nav-btn.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        /* MAIN */
+        .main-content {
+            background: var(--cream);
+        }
+        .section-header {
+            background: linear-gradient(135deg, #6B0000, #A00000);
+            padding: 56px 20px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--gold-dark), var(--gold), transparent);
+        }
+        .section-number {
+            display: inline-block;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(26px, 5vw, 44px);
+            font-weight: 700;
+            color: white;
+            letter-spacing: 3px;
+        }
+        .section-title span {
+            color: var(--gold);
+        }
+
+        /* WEAPON CARDS -> 改为核心理念卡片 */
+        .weapons-section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .weapons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .weapon-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(192, 57, 43, .15);
+            transition: transform .3s, box-shadow .3s;
+            cursor: pointer;
+        }
+        .weapon-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(139, 0, 0, .18);
+        }
+        .weapon-card-header {
+            background: linear-gradient(135deg, var(--red-deep), var(--red-primary));
+            padding: 28px 24px 24px;
+        }
+        .weapon-card:nth-child(2) .weapon-card-header {
+            background: linear-gradient(135deg, #8B1A00, #C0552B);
+        }
+        .weapon-card:nth-child(3) .weapon-card-header {
+            background: linear-gradient(135deg, #5C1A00, #9B3A1A);
+        }
+        .weapon-num {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, .45);
+            margin-bottom: 8px;
+        }
+        .weapon-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .weapon-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .weapon-en {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .45);
+            letter-spacing: 2px;
+        }
+        .weapon-card-body {
+            padding: 24px;
+        }
+        .weapon-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+        .weapon-tag {
+            display: inline-block;
+            background: var(--red-pale);
+            color: var(--red-primary);
+            border: 1px solid rgba(192, 57, 43, .2);
+            border-radius: 2px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            margin: 3px 3px 3px 0;
+        }
+        .weapon-detail-btn {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 11px;
+            background: none;
+            border: 1.5px solid var(--red-primary);
+            color: var(--red-primary);
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all .2s;
+            border-radius: 2px;
+        }
+        .weapon-detail-btn:hover {
+            background: var(--red-primary);
+            color: white;
+        }
+
+        /* DETAIL */
+        .detail-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .7);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .detail-overlay.open {
+            display: flex;
+            animation: fadeIn .2s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .detail-panel {
+            background: var(--cream);
+            max-width: 680px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 4px;
+            animation: slideUp .3s ease;
+            border-top: 4px solid var(--red-primary);
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .detail-top {
+            background: linear-gradient(135deg, var(--red-deep), var(--red-primary));
+            padding: 32px 32px 28px;
+            position: relative;
+        }
+        .detail-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .detail-close:hover {
+            background: rgba(255, 255, 255, .25);
+        }
+        .detail-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+        .detail-subtitle {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            letter-spacing: 2px;
+        }
+        .detail-body {
+            padding: 32px;
+        }
+        .detail-block {
+            margin-bottom: 28px;
+        }
+        .detail-block-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--red-deep);
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 3px solid var(--red-primary);
+        }
+        .detail-block p {
+            font-size: 14px;
+            color: #444;
+            line-height: 2;
+        }
+        .detail-block ul {
+            list-style: none;
+            padding: 0;
+        }
+        .detail-block ul li {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.9;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            border-bottom: 1px solid rgba(192, 57, 43, .08);
+        }
+        .detail-block ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--red-primary);
+            font-size: 8px;
+            top: 10px;
+        }
+
+        /* TIMELINE */
+        .timeline-section {
+            background: #1A0000;
+            padding: 60px 20px;
+        }
+        .timeline-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .timeline-header h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .timeline-header p {
+            color: rgba(255, 255, 255, .45);
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--gold), var(--gold), transparent);
+            opacity: .4;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 36px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -34px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 2px solid #1A0000;
+            box-shadow: 0 0 8px rgba(212, 172, 13, .5);
+        }
+        .timeline-year {
+            display: inline-block;
+            background: rgba(212, 172, 13, .12);
+            border: 1px solid rgba(212, 172, 13, .3);
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 3px;
+            padding: 3px 10px;
+            border-radius: 2px;
+            margin-bottom: 8px;
+        }
+        .timeline-event {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 6px;
+        }
+        .timeline-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .5);
+            line-height: 1.8;
+        }
+
+        /* QUIZ */
+        .quiz-section {
+            padding: 60px 20px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .quiz-header h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 30px;
+            color: var(--red-deep);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .quiz-header p {
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+        .quiz-progress-bar {
+            height: 4px;
+            background: rgba(192, 57, 43, .1);
+            border-radius: 2px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--red-deep), var(--red-primary));
+            border-radius: 2px;
+            transition: width .4s ease;
+        }
+        .quiz-card {
+            background: white;
+            border: 1px solid rgba(192, 57, 43, .1);
+            border-radius: 4px;
+            padding: 36px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .quiz-card.active {
+            display: block;
+            animation: fadeIn .3s ease;
+        }
+        .quiz-q-num {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--red-primary);
+            margin-bottom: 10px;
+        }
+        .quiz-question {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 18px;
+            color: var(--ink);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option {
+            padding: 14px 20px;
+            border: 1.5px solid rgba(192, 57, 43, .2);
+            border-radius: 3px;
+            background: var(--red-pale);
+            color: var(--ink-mid);
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all .2s;
+            text-align: left;
+            letter-spacing: .5px;
+            line-height: 1.6;
+        }
+        .quiz-option:hover:not(:disabled) {
+            border-color: var(--red-primary);
+            background: white;
+            color: var(--red-deep);
+        }
+        .quiz-option.correct {
+            background: #EAF7EE;
+            border-color: #2ECC71;
+            color: #1A6B3C;
+        }
+        .quiz-option.wrong {
+            background: #FCF3F3;
+            border-color: var(--red-primary);
+            color: var(--red-deep);
+        }
+        .quiz-option:disabled {
+            cursor: not-allowed;
+        }
+        .quiz-feedback {
+            margin-top: 20px;
+            padding: 16px 20px;
+            border-radius: 3px;
+            font-size: 14px;
+            line-height: 1.8;
+            display: none;
+        }
+        .quiz-feedback.show {
+            display: block;
+            animation: fadeIn .25s ease;
+        }
+        .quiz-feedback.correct {
+            background: #EAF7EE;
+            color: #1A6B3C;
+            border: 1px solid #A3DFBC;
+        }
+        .quiz-feedback.wrong {
+            background: #FCF3F3;
+            color: var(--red-deep);
+            border: 1px solid rgba(192, 57, 43, .3);
+        }
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 28px;
+        }
+        .quiz-btn {
+            padding: 11px 28px;
+            border: 1.5px solid var(--red-primary);
+            background: none;
+            color: var(--red-primary);
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all .2s;
+            border-radius: 2px;
+        }
+        .quiz-btn:hover {
+            background: var(--red-primary);
+            color: white;
+        }
+        .quiz-btn:disabled {
+            opacity: .3;
+            pointer-events: none;
+        }
+        .quiz-btn.primary {
+            background: var(--red-primary);
+            color: white;
+        }
+        .quiz-btn.primary:hover {
+            background: var(--red-deep);
+            border-color: var(--red-deep);
+        }
+        .quiz-score-panel {
+            display: none;
+            text-align: center;
+            padding: 48px 32px;
+            background: white;
+            border: 1px solid rgba(192, 57, 43, .1);
+            border-radius: 4px;
+        }
+        .quiz-score-panel.show {
+            display: block;
+            animation: fadeIn .4s ease;
+        }
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--red-deep), var(--red-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 auto 24px;
+        }
+        .score-num {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+        .score-denom {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .6);
+            letter-spacing: 2px;
+        }
+        .score-label {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 22px;
+            color: var(--red-deep);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .score-msg {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 28px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* COMPARE */
+        .compare-section {
+            background: #F9F0F0;
+            padding: 60px 20px;
+        }
+        .compare-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .compare-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .compare-header h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 28px;
+            color: var(--red-deep);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(192, 57, 43, .15);
+        }
+        .compare-table thead tr {
+            background: linear-gradient(135deg, var(--red-deep), var(--red-primary));
+        }
+        .compare-table thead th {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+            padding: 18px 20px;
+            text-align: left;
+        }
+        .compare-table tbody tr {
+            border-bottom: 1px solid rgba(192, 57, 43, .08);
+            transition: background .15s;
+        }
+        .compare-table tbody tr:hover {
+            background: var(--red-pale);
+        }
+        .compare-table tbody td {
+            padding: 16px 20px;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.8;
+            vertical-align: top;
+        }
+        .compare-table tbody td:first-child {
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 600;
+            color: var(--red-deep);
+            font-size: 15px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0D0000;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(212, 172, 13, .2);
+        }
+        .footer-star {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .footer p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .25);
+            letter-spacing: 3px;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A0000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(192, 57, 43, .5);
+            border-radius: 3px;
+        }
+
+        @media (max-width:600px) {
+            .hero-quote {
+                padding: 16px 18px;
+            }
+            .hero-quote p {
+                font-size: 13px;
+            }
+            .nav-btn {
+                padding: 10px 14px;
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+            .compare-table thead th,
+            .compare-table tbody td {
+                padding: 12px 12px;
+                font-size: 12px;
+            }
+            .compare-table tbody td:first-child {
+                font-size: 13px;
+            }
+            .detail-panel {
+                max-height: 90vh;
+            }
+            .detail-body {
+                padding: 20px;
+            }
+            .quiz-card {
+                padding: 24px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <div class="star-bg" id="starBg"></div>
+        <div class="hero-emblem">❤️</div>
+        <div class="hero-subtitle-top">中国共产党的根本政治立场</div>
+        <h1 class="hero-title">以<span>人民</span>为中心</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-desc">
+            坚持人民主体地位，践行全心全意为人民服务的根本宗旨，把人民对美好生活的向往作为奋斗目标，依靠人民创造历史伟业。
+        </p>
+        <div class="hero-quote">
+            <p>「江山就是人民，人民就是江山。中国共产党领导人民打江山、守江山，守的是人民的心。以人民为中心的发展思想，不是一个抽象的、玄奥的概念，不能只停留在口头上、止步于思想环节，而要体现在经济社会发展各个环节。」</p>
+            <cite>—— 习近平（2021年7月1日 在庆祝中国共产党成立100周年大会上的讲话）</cite>
+        </div>
+        <div class="scroll-hint">↓ 向下滚动探索</div>
+    </section>
+
+    <!-- ============ NAV ============ -->
+    <nav class="sticky-nav">
+        <button class="nav-btn active" onclick="navClick(this,'weapons')">核心理念</button>
+        <button class="nav-btn" onclick="navClick(this,'timeline')">历史脉络</button>
+        <button class="nav-btn" onclick="navClick(this,'compare')">对比总览</button>
+        <button class="nav-btn" onclick="navClick(this,'quiz')">知识测验</button>
+    </nav>
+
+    <!-- ============ MAIN ============ -->
+    <div class="main-content">
+
+        <!-- ====== 核心理念 ====== -->
+        <div id="weapons">
+            <div class="section-header">
+                <span class="section-number">SECTION 01</span>
+                <h2 class="section-title">以人民为中心的<span>核心内涵</span></h2>
+            </div>
+            <div class="weapons-section">
+                <div class="weapons-grid">
+
+                    <!-- 卡片1：人民立场 -->
+                    <div class="weapon-card" onclick="openDetail(0)">
+                        <div class="weapon-card-header">
+                            <div class="weapon-num">第 一 维</div>
+                            <div class="weapon-icon">🏛️</div>
+                            <div class="weapon-name">人民立场</div>
+                            <div class="weapon-en">PEOPLE'S STANDPOINT</div>
+                        </div>
+                        <div class="weapon-card-body">
+                            <p class="weapon-desc">
+                                始终站在最广大人民的立场上，坚持人民主体地位，把人民拥护不拥护、赞成不赞成、高兴不高兴作为一切工作的出发点和落脚点。
+                            </p>
+                            <span class="weapon-tag">根本政治立场</span>
+                            <span class="weapon-tag">人民主体</span>
+                            <span class="weapon-tag">群众路线</span>
+                            <button class="weapon-detail-btn" onclick="event.stopPropagation();openDetail(0)">深入了解 →</button>
+                        </div>
+                    </div>
+
+                    <!-- 卡片2：人民利益 -->
+                    <div class="weapon-card" onclick="openDetail(1)">
+                        <div class="weapon-card-header">
+                            <div class="weapon-num">第 二 维</div>
+                            <div class="weapon-icon">⭐</div>
+                            <div class="weapon-name">人民利益</div>
+                            <div class="weapon-en">PEOPLE'S INTERESTS</div>
+                        </div>
+                        <div class="weapon-card-body">
+                            <p class="weapon-desc">
+                                全心全意为人民服务，把实现好、维护好、发展好最广大人民的根本利益作为一切工作的最高标准，让发展成果更多更公平惠及全体人民。
+                            </p>
+                            <span class="weapon-tag">根本宗旨</span>
+                            <span class="weapon-tag">共同富裕</span>
+                            <span class="weapon-tag">民生福祉</span>
+                            <button class="weapon-detail-btn" onclick="event.stopPropagation();openDetail(1)">深入了解 →</button>
+                        </div>
+                    </div>
+
+                    <!-- 卡片3：人民主体 -->
+                    <div class="weapon-card" onclick="openDetail(2)">
+                        <div class="weapon-card-header">
+                            <div class="weapon-num">第 三 维</div>
+                            <div class="weapon-icon">👥</div>
+                            <div class="weapon-name">人民主体</div>
+                            <div class="weapon-en">PEOPLE AS SUBJECT</div>
+                        </div>
+                        <div class="weapon-card-body">
+                            <p class="weapon-desc">
+                                人民是历史的创造者，是决定党和国家前途命运的根本力量。坚持人民主体地位，发展全过程人民民主，依靠人民创造历史伟业。
+                            </p>
+                            <span class="weapon-tag">历史创造者</span>
+                            <span class="weapon-tag">全过程人民民主</span>
+                            <span class="weapon-tag">共建共治共享</span>
+                            <button class="weapon-detail-btn" onclick="event.stopPropagation();openDetail(2)">深入了解 →</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== 历史脉络 ====== -->
+        <div id="timeline">
+            <div class="timeline-section">
+                <div class="timeline-inner">
+                    <div class="timeline-header">
+                        <h2>历史脉络</h2>
+                        <p>以人民为中心理念的形成与发展</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">1921年</span>
+                            <div class="timeline-event">中国共产党成立 · 确立初心</div>
+                            <div class="timeline-desc">中国共产党在上海宣告成立，确立为中国人民谋幸福、为中华民族谋复兴的初心使命，把人民利益写在自己的旗帜上。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">1927—1937年</span>
+                            <div class="timeline-event">土地革命 · 解决农民根本问题</div>
+                            <div class="timeline-desc">开展土地革命，打土豪、分田地，让农民获得土地这一最基本的生产资料，充分体现党对人民利益的深切关怀。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">1945年</span>
+                            <div class="timeline-event">党的七大 · 确立为人民服务宗旨</div>
+                            <div class="timeline-desc">毛泽东在《论联合政府》中全面阐述全心全意为人民服务的根本宗旨，成为中国共产党一切工作的最高准则。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">1949年</span>
+                            <div class="timeline-event">新中国成立 · 人民当家作主</div>
+                            <div class="timeline-desc">中华人民共和国宣告成立，人民成为国家的主人，实现了中国从几千年封建专制向人民民主的伟大飞跃。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">1978年</span>
+                            <div class="timeline-event">改革开放 · 以经济建设为中心改善民生</div>
+                            <div class="timeline-desc">把党和国家工作中心转移到经济建设上来，大力发展生产力，不断提高人民生活水平，让人民共享改革发展成果。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">2012年</span>
+                            <div class="timeline-event">新时代 · 以人民为中心的发展思想</div>
+                            <div class="timeline-desc">党的十八大以来，明确提出以人民为中心的发展思想，坚持人民主体地位，不断促进人的全面发展、全体人民共同富裕。</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">2020年</span>
+                            <div class="timeline-event">全面建成小康社会 · 人民共享</div>
+                            <div class="timeline-desc">历史性地解决了绝对贫困问题，全面建成小康社会，兑现了党对人民的庄严承诺，书写了人类减贫史上的奇迹。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== 对比总览 ====== -->
+        <div id="compare">
+            <div class="compare-section">
+                <div class="compare-inner">
+                    <div class="compare-header">
+                        <h2>以人民为中心 · 三维对比总览</h2>
+                        <p style="color:#888;font-size:13px;letter-spacing:2px;">系统梳理三个维度的核心要素</p>
+                    </div>
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>维度</th>
+                                <th>核心内涵</th>
+                                <th>主要内容</th>
+                                <th>历史作用</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>人民立场</td>
+                                <td>始终站在人民大众一边，坚持人民主体地位</td>
+                                <td>一切为了人民，一切依靠人民；从群众中来，到群众中去</td>
+                                <td>确保党始终同人民想在一起、干在一起，筑牢执政根基</td>
+                            </tr>
+                            <tr>
+                                <td>人民利益</td>
+                                <td>全心全意为人民服务，把人民利益放在首位</td>
+                                <td>发展为了人民、发展依靠人民、发展成果由人民共享</td>
+                                <td>推动经济社会持续健康发展，不断增进民生福祉</td>
+                            </tr>
+                            <tr>
+                                <td>人民主体</td>
+                                <td>人民是历史的创造者，是真正的英雄</td>
+                                <td>发展全过程人民民主，尊重人民首创精神，激发人民创造活力</td>
+                                <td>汇聚亿万人民的磅礴力量，创造人类历史新篇章</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== 知识测验 ====== -->
+        <div id="quiz">
+            <div class="section-header">
+                <span class="section-number">SECTION 04</span>
+                <h2 class="section-title">知识<span>测验</span></h2>
+            </div>
+            <div class="quiz-section">
+                <div class="quiz-header">
+                    <h2>自我检测</h2>
+                    <p>共 6 题，检验你对「以人民为中心」的掌握程度</p>
+                </div>
+
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="progressFill" style="width:0%"></div>
+                </div>
+
+                <!-- 题目1 -->
+                <div class="quiz-card active" id="q0">
+                    <div class="quiz-q-num">第 01 题 / 共 06 题</div>
+                    <div class="quiz-question">「以人民为中心」的发展思想，核心要义是什么？</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="answer(0,0,1)">A. 以经济建设为中心</button>
+                        <button class="quiz-option" onclick="answer(0,1,1)">B. 以人民利益为出发点和落脚点</button>
+                        <button class="quiz-option" onclick="answer(0,2,1)">C. 以政治建设为统领</button>
+                        <button class="quiz-option" onclick="answer(0,3,1)">D. 以文化建设为引领</button>
+                    </div>
+                    <div class="quiz-feedback" id="fb0"></div>
+                </div>
+
+                <!-- 题目2 -->
+                <div class="quiz-card" id="q1">
+                    <div class="quiz-q-num">第 02 题 / 共 06 题</div>
+                    <div class="quiz-question">中国共产党的根本政治立场是什么？</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="answer(1,0,0)">A. 人民立场</button>
+                        <button class="quiz-option" onclick="answer(1,1,0)">B. 国家立场</button>
+                        <button class="quiz-option" onclick="answer(1,2,0)">C. 政党立场</button>
+                        <button class="quiz-option" onclick="answer(1,3,0)">D. 阶级立场</button>
+                    </div>
+                    <div class="quiz-feedback" id="fb1"></div>
+                </div>
+
+                <!-- 题目3 -->
+                <div class="quiz-card" id="q2">
+                    <div class="quiz-q-num">第 03 题 / 共 06 题</div>
+                    <div class="quiz-question">以下哪项最能体现「以人民为中心」的价值追求？</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="answer(2,0,0)">A. 全心全意为人民服务</button>
+                        <button class="quiz-option" onclick="answer(2,1,0)">B. 以GDP增长为核心</button>
+                        <button class="quiz-option" onclick="answer(2,2,0)">C. 以城市发展为中心</button>
+                        <button class="quiz-option" onclick="answer(2,3,0)">D. 以工业发展为重点</button>
+                    </div>
+                    <div class="quiz-feedback" id="fb2"></div>
+                </div>
+
+                <!-- 题目4 -->
+                <div class="quiz-card" id="q3">
+                    <div class="quiz-q-num">第 04 题 / 共 06 题</div>
+                    <div class="quiz-question">「江山就是人民，人民就是江山」这一重要论述，集中体现了什么理念？</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="answer(3,0,0)">A. 以人民为中心</button>
+                        <button class="quiz-option" onclick="answer(3,1,0)">B. 以经济建设为中心</button>
+                        <button class="quiz-option" onclick="answer(3,2,0)">C. 以政治建设为中心</button>
+                        <button class="quiz-option" onclick="answer(3,3,0)">D. 以文化建设为中心</button>
+                    </div>
+                    <div class="quiz-feedback" id="fb3"></div>
+                </div>
+
+                <!-- 题目5 -->
+                <div class="quiz-card" id="q4">
+                    <div class="quiz-q-num">第 05 题 / 共 06 题</div>
+                    <div class="quiz-question">发展「全过程人民民主」体现了「以人民为中心」的哪个维度？</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="answer(4,0,2)">A. 人民立场</button>
+                        <button class="quiz-option" onclick="answer(4,1,2)">B. 人民利益</button>
+                        <button class="quiz-option" onclick="answer(4,2,2)">C. 人民主体</button>
+                        <button class="quiz-option" onclick="answer(4,3,2)">D. 人民共享</button>
+                    </div>
+                    <div class="quiz-feedback" id="fb4"></div>
+                </div>
+
+                <!-- 题目6 -->
+                <div class="quiz-card" id="q5">
+                    <div class="quiz-q-num">第 06 题 / 共 06 题</div>
+                    <div class="quiz-question">下列关于「以人民为中心」的说法，最准确的是？</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="answer(5,0,1)">A. 以人民为中心就是满足所有个人的一切需求</button>
+                        <button class="quiz-option" onclick="answer(5,1,1)">B. 坚持人民主体地位，以人民利益为出发点和落脚点</button>
+                        <button class="quiz-option" onclick="answer(5,2,1)">C. 以人民为中心就是单纯提高社会福利</button>
+                        <button class="quiz-option" onclick="answer(5,3,1)">D. 以人民为中心就是发展经济</button>
+                    </div>
+                    <div class="quiz-feedback" id="fb5"></div>
+                </div>
+
+                <!-- 得分面板 -->
+                <div class="quiz-score-panel" id="scorePanelEl">
+                    <div class="score-circle">
+                        <div class="score-num" id="scoreNum">0</div>
+                        <div class="score-denom">/ 6</div>
+                    </div>
+                    <div class="score-label" id="scoreLabel"></div>
+                    <div class="score-msg" id="scoreMsg"></div>
+                    <button class="quiz-btn primary" onclick="restartQuiz()">重新测验</button>
+                </div>
+
+                <div class="quiz-nav">
+                    <button class="quiz-btn" id="prevBtn" onclick="prevQ()" disabled>← 上一题</button>
+                    <span style="color:#aaa;font-size:12px;letter-spacing:2px;" id="qStatus">01 / 06</span>
+                    <button class="quiz-btn primary" id="nextBtn" onclick="nextQ()" disabled>下一题 →</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============ DETAIL OVERLAY ============ -->
+    <div class="detail-overlay" id="detailOverlay" onclick="closeDetail(event)">
+        <div class="detail-panel" onclick="event.stopPropagation()">
+            <div class="detail-top">
+                <button class="detail-close" onclick="closeDetailPanel()">✕</button>
+                <div class="detail-title" id="dtTitle"></div>
+                <div class="detail-subtitle" id="dtSubtitle"></div>
+            </div>
+            <div class="detail-body" id="dtBody"></div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-star">★</div>
+        <p>以人民为中心 · 中国共产党的根本政治立场 · 知识学习平台</p>
+    </footer>
+
+    <script>
+        // ======== 星空背景 ========
+        (function() {
+            const bg = document.getElementById('starBg');
+            for (let i = 0; i < 50; i++) {
+                const s = document.createElement('span');
+                s.className = 'star';
+                s.textContent = '★';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.top = Math.random() * 100 + '%';
+                s.style.fontSize = (8 + Math.random() * 14) + 'px';
+                s.style.animationDelay = (Math.random() * 4) + 's';
+                s.style.animationDuration = (2 + Math.random() * 4) + 's';
+                bg.appendChild(s);
+            }
+        })();
+
+        // ======== 导航 ========
+        function navClick(btn, id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // ======== 详情数据 ========
+        const details = [{
+            title: '人民立场',
+            subtitle: 'PEOPLE\'S STANDPOINT · 第一维度',
+            body: `
+            <div class="detail-block">
+              <div class="detail-block-title">基本含义</div>
+              <p>人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。始终站在最广大人民的立场上，坚持人民主体地位，把人民拥护不拥护、赞成不赞成、高兴不高兴、答应不答应作为衡量一切工作得失的根本标准。</p>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">核心要求</div>
+              <ul>
+                <li>坚持人民至上，把人民放在心中最高位置</li>
+                <li>坚持群众路线，始终保持同人民群众的血肉联系</li>
+                <li>坚持人民主体地位，尊重人民首创精神</li>
+                <li>以人民满意为最高标准，不断实现人民对美好生活的向往</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">实践路径</div>
+              <ul>
+                <li>深入基层、深入群众，倾听人民呼声</li>
+                <li>从群众中来、到群众中去，汲取群众智慧</li>
+                <li>把群众路线贯彻到治国理政全部活动之中</li>
+                <li>着力解决人民群众急难愁盼问题</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">新时代意义</div>
+              <p>在新时代，人民立场体现在坚持以人民为中心的发展思想，把人民对美好生活的向往作为奋斗目标，推动人的全面发展、全体人民共同富裕取得更为明显的实质性进展。</p>
+            </div>
+          `
+        }, {
+            title: '人民利益',
+            subtitle: 'PEOPLE\'S INTERESTS · 第二维度',
+            body: `
+            <div class="detail-block">
+              <div class="detail-block-title">基本含义</div>
+              <p>全心全意为人民服务是中国共产党的根本宗旨，人民利益是党的一切工作的最高准则。坚持发展为了人民、发展依靠人民、发展成果由人民共享，不断实现好、维护好、发展好最广大人民的根本利益。</p>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">核心内涵</div>
+              <ul>
+                <li>把人民利益放在首位，正确处理利益关系</li>
+                <li>坚持以人民为中心的发展思想</li>
+                <li>推动共同富裕取得实质性进展</li>
+                <li>让现代化建设成果更多更公平惠及全体人民</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">民生实践</div>
+              <ul>
+                <li>打赢脱贫攻坚战，历史性解决绝对贫困问题</li>
+                <li>建成世界上规模最大的教育体系、社会保障体系、医疗卫生体系</li>
+                <li>不断改善人民生活品质，提高社会建设水平</li>
+                <li>在高质量发展中创造高品质生活</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">价值追求</div>
+              <p>人民对美好生活的向往，就是我们的奋斗目标。党始终把人民利益作为根本价值追求，推动经济社会发展与民生改善同频共振，不断增强人民群众的获得感、幸福感、安全感。</p>
+            </div>
+          `
+        }, {
+            title: '人民主体',
+            subtitle: 'PEOPLE AS SUBJECT · 第三维度',
+            body: `
+            <div class="detail-block">
+              <div class="detail-block-title">基本含义</div>
+              <p>人民是历史的创造者，是决定党和国家前途命运的根本力量。坚持人民主体地位，发展全过程人民民主，尊重人民首创精神，充分调动人民的积极性、主动性、创造性，依靠人民创造历史伟业。</p>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">全过程人民民主</div>
+              <ul>
+                <li>民主选举、民主协商、民主决策、民主管理、民主监督</li>
+                <li>涵盖经济、政治、文化、社会、生态文明等各领域</li>
+                <li>体现人民意志、保障人民权益、激发人民创造</li>
+                <li>是最广泛、最真实、最管用的社会主义民主</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">共建共治共享</div>
+              <ul>
+                <li>建设人人有责、人人尽责、人人享有的社会治理共同体</li>
+                <li>发挥人民群众在基层治理中的主体作用</li>
+                <li>拓宽人民参与国家治理的渠道和方式</li>
+                <li>让人民群众在共建共治共享中拥有更多获得感</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-title">历史伟力</div>
+              <p>中国共产党之所以能够发展壮大，中国特色社会主义之所以能够不断前进，正是因为依靠了人民。历史充分证明，人民是真正的英雄，人民是党执政兴国的最大底气。</p>
+            </div>
+          `
+        }];
+
+        // ======== 打开/关闭详情 ========
+        function openDetail(idx) {
+            const d = details[idx];
+            document.getElementById('dtTitle').textContent = d.title;
+            document.getElementById('dtSubtitle').textContent = d.subtitle;
+            document.getElementById('dtBody').innerHTML = d.body;
+            document.getElementById('detailOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetail(e) {
+            if (e.target === document.getElementById('detailOverlay')) closeDetailPanel();
+        }
+
+        function closeDetailPanel() {
+            document.getElementById('detailOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ======== 时间线动画 ========
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: .2 });
+        document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+
+        // ======== 测验逻辑 ========
+        const explanations = [
+            '正确！以人民为中心的发展思想，核心就是坚持人民主体地位，以人民利益为出发点和落脚点，不断满足人民日益增长的美好生活需要。',
+            '正确！人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。',
+            '正确！全心全意为人民服务是中国共产党的根本宗旨，是「以人民为中心」价值追求的集中体现。',
+            '正确！「江山就是人民，人民就是江山」深刻揭示了党与人民的血肉联系，集中体现了以人民为中心的理念。',
+            '正确！全过程人民民主体现了人民主体地位，是「以人民为中心」在政治领域的生动实践。',
+            '正确！以人民为中心，就是坚持人民主体地位，以人民利益为出发点和落脚点，依靠人民创造历史伟业。'
+        ];
+
+        const wrongExplanations = [
+            '答案不正确。以人民为中心的发展思想，核心是以人民利益为出发点和落脚点，而不是单纯以经济或政治为中心。',
+            '答案不正确。中国共产党的根本政治立场是人民立场，始终站在最广大人民的立场上。',
+            '答案不正确。全心全意为人民服务是党的根本宗旨，最能体现以人民为中心的价值追求。',
+            '答案不正确。「江山就是人民，人民就是江山」集中体现了以人民为中心的理念，而非其他。',
+            '答案不正确。全过程人民民主体现的是人民主体地位，属于「人民主体」这一维度。',
+            '答案不正确。以人民为中心是坚持人民主体地位，以人民利益为出发点和落脚点，而非满足所有个人需求或单纯提高福利。'
+        ];
+
+        let currentQ = 0,
+            answered = new Array(6).fill(false),
+            scores = 0;
+
+        function answer(qIdx, optIdx, correctIdx) {
+            if (answered[qIdx]) return;
+            answered[qIdx] = true;
+
+            const card = document.getElementById('q' + qIdx);
+            const options = card.querySelectorAll('.quiz-option');
+            const fb = document.getElementById('fb' + qIdx);
+
+            options.forEach(o => o.disabled = true);
+
+            if (optIdx === correctIdx) {
+                options[optIdx].classList.add('correct');
+                fb.className = 'quiz-feedback correct show';
+                fb.innerHTML = '✓ ' + explanations[qIdx];
+                scores++;
+            } else {
+                options[optIdx].classList.add('wrong');
+                options[correctIdx].classList.add('correct');
+                fb.className = 'quiz-feedback wrong show';
+                fb.innerHTML = '✗ ' + wrongExplanations[qIdx];
+            }
+
+            document.getElementById('nextBtn').disabled = false;
+            updateProgress();
+
+            if (currentQ === 5) document.getElementById('nextBtn').textContent = '查看结果 →';
+        }
+
+        function nextQ() {
+            if (currentQ < 5) {
+                document.getElementById('q' + currentQ).classList.remove('active');
+                currentQ++;
+                document.getElementById('q' + currentQ).classList.add('active');
+                document.getElementById('prevBtn').disabled = false;
+                document.getElementById('nextBtn').disabled = !answered[currentQ];
+                document.getElementById('qStatus').textContent = String(currentQ + 1).padStart(2, '0') + ' / 06';
+                if (currentQ === 5 && answered[currentQ]) document.getElementById('nextBtn').textContent = '查看结果 →';
+            } else {
+                showScore();
+            }
+        }
+
+        function prevQ() {
+            if (currentQ > 0) {
+                document.getElementById('q' + currentQ).classList.remove('active');
+                currentQ--;
+                document.getElementById('q' + currentQ).classList.add('active');
+                document.getElementById('prevBtn').disabled = currentQ === 0;
+                document.getElementById('nextBtn').disabled = !answered[currentQ];
+                document.getElementById('nextBtn').textContent = currentQ === 5 ? '查看结果 →' : '下一题 →';
+                document.getElementById('qStatus').textContent = String(currentQ + 1).padStart(2, '0') + ' / 06';
+            }
+        }
+
+        function updateProgress() {
+            document.getElementById('progressFill').style.width = (answered.filter(Boolean).length / 6 * 100) + '%';
+        }
+
+        function showScore() {
+            document.querySelectorAll('.quiz-card').forEach(c => c.classList.remove('active'));
+            document.querySelector('.quiz-nav').style.display = 'none';
+
+            const panel = document.getElementById('scorePanelEl');
+            panel.classList.add('show');
+            document.getElementById('scoreNum').textContent = scores;
+
+            let label, msg;
+            if (scores === 6) {
+                label = '满分！优秀';
+                msg = '你对「以人民为中心」的理念掌握非常扎实！对人民立场、人民利益、人民主体三个维度都有深刻理解。';
+            } else if (scores >= 4) {
+                label = '良好掌握';
+                msg = '你对「以人民为中心」有较好的了解，建议回顾答错的题目，进一步深化对相关知识点的理解。';
+            } else if (scores >= 2) {
+                label = '继续努力';
+                msg = '你对「以人民为中心」有初步认识，建议重新仔细阅读各维度的详细介绍，加强理解与记忆。';
+            } else {
+                label = '需要加强';
+                msg = '建议从头仔细学习「以人民为中心」的核心内涵，点击各维度卡片深入了解详细内容后再来挑战！';
+            }
+
+            document.getElementById('scoreLabel').textContent = label;
+            document.getElementById('scoreMsg').textContent = msg;
+        }
+
+        function restartQuiz() {
+            currentQ = 0;
+            scores = 0;
+            answered = new Array(6).fill(false);
+
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('scorePanelEl').classList.remove('show');
+            document.querySelector('.quiz-nav').style.display = 'flex';
+            document.getElementById('prevBtn').disabled = true;
+            document.getElementById('nextBtn').disabled = true;
+            document.getElementById('nextBtn').textContent = '下一题 →';
+            document.getElementById('qStatus').textContent = '01 / 06';
+
+            document.querySelectorAll('.quiz-card').forEach((c, i) => {
+                c.classList.remove('active');
+                c.querySelectorAll('.quiz-option').forEach(o => {
+                    o.disabled = false;
+                    o.classList.remove('correct', 'wrong');
+                });
+                const fb = document.getElementById('fb' + i);
+                fb.className = 'quiz-feedback';
+                fb.innerHTML = '';
+            });
+
+            document.getElementById('q0').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
